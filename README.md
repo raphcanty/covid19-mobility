@@ -19,7 +19,7 @@ Processed datasets containing London transport data in a simple format: rows of 
 ### `/figures`
 Charts captured from D3 or created using Datawrapper to visualise data in `datasets`.
 
-### `London Bus Data`
+### `/London Bus Data`
 Analysis of London bus speed data from [TfL](https://tfl.gov.uk/corporate/publications-and-reports/buses-performance-data).
 
 The King's College Avowel is also included, affirming that this work is not plaigurised and is my own work.
