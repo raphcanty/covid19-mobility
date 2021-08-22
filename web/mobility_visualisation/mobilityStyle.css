@@ -1,0 +1,223 @@
+p {
+    font-family: Arial, sans-serif;
+}
+
+text.title {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-anchor: middle;
+}
+
+.label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.axis text {
+    font-size: 14px;
+    fill: black;
+}
+
+#mobilityGraph {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.line {
+    fill: none;
+    stroke-width: 2px;
+}
+
+span {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.citymapper {
+    color: green;
+}
+
+.apple_driving {
+    color: deeppink;
+}
+
+.apple_transit {
+    color: darkorchid;
+}
+
+.apple_walking {
+    color: limegreen;
+}
+
+.google_retail_recreation {
+    color: mediumturquoise;
+}
+
+.google_grocery_pharmacy {
+    color: orangered;
+}
+
+.google_parks {
+    color: lightslategray;
+}
+
+.google_transit {
+    color: hotpink;
+}
+
+.google_workplaces{
+    color: darkolivegreen;
+}
+
+.google_residential {
+    color: dodgerblue;
+}
+
+.tomtom {
+    color: midnightblue;
+}
+
+.waze {
+    color: darkgoldenrod;
+}
+
+.TfL_Tube {
+    color: blue;
+}
+
+.TfL_Bus {
+    color: red;
+}
+
+.TfL_Bike {
+    color: orange;
+}
+
+.line.citymapper {
+    stroke: green;
+}
+
+.line.apple_driving {
+    stroke: deeppink;
+}
+
+.line.apple_transit {
+    stroke: darkorchid;
+}
+
+.line.apple_walking {
+    stroke: limegreen;
+}
+
+.line.google_retail_recreation {
+    stroke: mediumturquoise;
+}
+
+.line.google_grocery_pharmacy {
+    stroke: orangered;
+}
+
+.line.google_parks {
+    stroke: lightslategray;
+}
+
+.line.google_transit {
+    stroke: hotpink;
+}
+
+.line.google_workplaces{
+    stroke: darkolivegreen;
+}
+
+.line.google_residential {
+    stroke: dodgerblue;
+}
+
+.line.tomtom {
+    stroke: midnightblue;
+}
+
+.line.waze {
+    stroke: darkgoldenrod;
+}
+
+.line.TfL_Tube {
+    stroke: blue;
+}
+
+.line.TfL_Bus {
+    stroke: red;
+}
+
+.line.TfL_Bike {
+    stroke: orange;
+}
+
+.line.zero {
+    stroke: black;
+}
+
+rect.level.l0 {
+    fill: #e6e6e6;
+}
+
+rect.level.l1 {
+    fill: #fbbdad;
+}
+
+rect.level.l2 {
+    fill: #ff9276;
+}
+
+rect.level.l3 {
+    fill: #ff6141;
+}
+
+rect.level.l4 {
+    fill: #ff0000;
+}
+
+rect.level.l5 {
+    fill: #D90000;
+}
+
+rect.lockdown {
+    fill: grey;
+    opacity: 30%;
+}
+
+.row {
+    display: flex;
+}
+
+.cbuffer {
+    flex: 20%
+}
+
+.column {
+    flex: 30%;
+}
+
+text.tooltip.back {
+    text-anchor: middle;
+    stroke: white;
+    stroke-width: 4px;
+    opacity: 0.8;
+    font: 16px Arial;
+}
+
+text.tooltip.front.date {
+    text-anchor: middle;
+    fill: black;
+    font: 16px Arial;
+}
+
+line.x {
+    stroke: black;
+    opacity: 0.5;
+}
