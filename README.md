@@ -8,7 +8,9 @@ Directory containing raw data downloaded from [Apple](https://covid19.apple.com/
 
 All sources are licensed to be used for this research purpose. TomTom data is from [Github](https://github.com/ActiveConclusion/COVID19_mobility) and is Copyright (c) 2020 ActiveConclusion.
 
-### Jupyter Notebooks
+Also considered are New York, Sydney and Hong Kong for datasets except for TfL data. Waze does not contain data regarding Hong Kong.
+
+### `/notebooks`
 In this directory, there is a Jupyter Notebook for every data source, where raw data is converted into the desired format. This also allows for statistics to be generated, such as the percentage decline in travel, to the be quoted in a report. One notebook generates a mobility index for TfL Cycle Hire data, and another integrates every data source together into a single csv file for use in visualisations.
 
 ### `/datasets`
@@ -16,5 +18,8 @@ Processed datasets containing London transport data in a simple format: rows of 
 
 ### `/figures`
 Charts captured from D3 or created using Datawrapper to visualise data in `datasets`.
+
+### `London Bus Data`
+Analysis of London bus speed data from [TfL](https://tfl.gov.uk/corporate/publications-and-reports/buses-performance-data).
 
 The King's College Avowel is also included, affirming that this work is not plaigurised and is my own work.
