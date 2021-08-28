@@ -143,6 +143,7 @@ Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).the
         .attr("height", tickHeight);
 
     // Add lockdown shaded box
+    // noinspection EqualityComparisonWithCoercionJS
     svg.append("g").selectAll("rect")
         .data(data[1].filter( (d) => d.level==5) )
         .enter().append("rect")
@@ -201,7 +202,7 @@ Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).the
         .text("Stringency")
 
     // Tooltip - data
-    var focus = svg.append("g")
+    let focus = svg.append("g")
         .attr("class", "focus")
         .style("display", "none");
 
