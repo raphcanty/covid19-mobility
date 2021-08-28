@@ -13,6 +13,13 @@ let parseTime = d3.timeParse("%Y-%m-%d"),
     formatDate = d3.timeFormat("%d-%b-%y"),
     bisectDate = d3.bisector(function(d) { return d.date; }).left;
 
+const formatMonth = d3.timeFormat("%b"),
+    formatYear = d3.timeFormat("%Y");
+
+function multiFormat(date) {
+    return (d3.timeYear(date) < date ? formatMonth : formatYear)(date);
+}
+
 // set the ranges
 let x = d3.scaleTime().range([0, width]);
 let y = d3.scaleLinear().range([height, 0]);
@@ -37,7 +44,6 @@ let timeExtents = null;
 function calcExtent(extents) {
     // Only considers visible elements
     let e = extents.filter((d, i) => visible.has(i))
-    console.log(e);
     return [d3.min(e, (d) => d[0] ),
         d3.max(e, (d) => d[1] )]
 }
@@ -47,8 +53,7 @@ function render() {
     x.domain(calcExtent(timeExtents));
 
     svg.select("g .y.axis").transition().duration(1500).call(d3.axisLeft(y));
-    console.log(svg.select("g .x.axis"));
-    svg.select("g .x.axis").transition().duration(1500).call(d3.axisBottom(x).tickSize(tickHeight));
+    svg.select("g .x.axis").transition().duration(1500).call(d3.axisBottom(x).tickSize(tickHeight).tickFormat(multiFormat).tickArguments([d3.timeMonth.every(1)]));
 
     // transition to new axes
     //let datasets = DATASETS.filter((d, i) => visible.has(i));
@@ -75,11 +80,12 @@ function render() {
 }
 
 function tickbox(inValue) {
+    let checkBox = document.getElementById(inValue);
     let di = DATASETS.indexOf(inValue);
-    if (visible.has(di)) {
+    if (checkBox.checked === false && visible.has(di)) {
         visible.delete(di);
         svg.select("#line_"+inValue).style("display", "none");
-    } else {
+    } else if (checkBox.checked === true && !visible.has(di)) {
         visible.add(di);
         svg.select("#line_"+inValue).style("display", "inline");
     }
@@ -167,7 +173,7 @@ Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).the
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).tickSize(tickHeight));
+        .call(d3.axisBottom(x).tickSize(tickHeight).tickFormat(multiFormat).tickArguments([d3.timeMonth.every(1)]));
 
     // Add the y Axes
     svg.append("g")

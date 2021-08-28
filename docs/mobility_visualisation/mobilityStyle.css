@@ -40,62 +40,77 @@ span {
 
 .citymapper {
     color: green;
+    accent-color: green;
 }
 
 .apple_driving {
     color: deeppink;
+    accent-color: deeppink;
 }
 
 .apple_transit {
     color: darkorchid;
+    accent-color: darkorchid;
 }
 
 .apple_walking {
     color: limegreen;
+    accent-color: limegreen;
 }
 
 .google_retail_recreation {
     color: mediumturquoise;
+    accent-color: mediumturquoise;
 }
 
 .google_grocery_pharmacy {
     color: orangered;
+    accent-color: orangered;
 }
 
 .google_parks {
     color: lightslategray;
+    accent-color: lightslategray;
 }
 
 .google_transit {
     color: hotpink;
+    accent-color: hotpink;
 }
 
 .google_workplaces{
     color: darkolivegreen;
+    accent-color: darkolivegreen;
 }
 
 .google_residential {
     color: dodgerblue;
+    accent-color: dodgerblue;
 }
 
 .tomtom {
     color: midnightblue;
+    accent-color: midnightblue;
 }
 
 .waze {
     color: darkgoldenrod;
+    accent-color: darkgoldenrod;
 }
 
 .TfL_Tube {
     color: blue;
+    accent-color: blue;
 }
 
 .TfL_Bus {
     color: red;
+    accent-color: red;
 }
 
 .TfL_Bike {
     color: orange;
+    accent-color: orange;
 }
 
 .line.citymapper {
