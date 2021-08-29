@@ -194,9 +194,9 @@ Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).the
     // Add label
     svg.append("text")
         .attr("class", "label")
-        .attr("x",-margin.left+2)
+        .attr("x",-margin.left)
         .attr("y",height+11)
-        .text("Lockdown")
+        .text("Restriction")
     svg.append("text")
         .attr("class", "label")
         .attr("x",-margin.left)
