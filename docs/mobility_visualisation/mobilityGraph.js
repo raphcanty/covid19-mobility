@@ -2,11 +2,13 @@
 let margin = {top: 30, right: 50, bottom: 55, left: 70},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
-    tickHeight = 25;
+    tickHeight = 27;
 
-let DATASETS = ["TfL_Bike", "apple_driving", "apple_transit", "apple_walking", "citymapper", "google_retail_recreation",
-    "google_grocery_pharmacy", "google_parks", "google_transit", "google_workplaces", "google_residential",
-    "tomtom", "TfL_Tube", "TfL_Bus", "waze"];
+let DURATION = 1000;
+
+let DATASETS = ["TfL_Bike", "google_parks", "google_residential", "google_grocery_pharmacy", "apple_driving",
+    "apple_transit", "apple_walking", "citymapper",  "google_retail_recreation", "google_transit", "google_workplaces",
+    "tomtom", "TfL_Bus", "TfL_Tube", "waze"];
 
 // parse the date / time
 let parseTime = d3.timeParse("%Y-%m-%d"),
@@ -28,8 +30,9 @@ let y = d3.scaleLinear().range([height, 0]);
 let lines = {};
 DATASETS.forEach(function (ds) {
     lines[ds] = d3.line()
+        .defined( (d) => !isNaN(d[ds]) )
         .x( (d) => x(d.date) )
-        .y( (d) => y(d[ds]) );
+        .y( (d) => isNaN(d[ds]) ? 100 : y(d[ds]) )
 })
 
 let visible = new Set();
@@ -52,27 +55,27 @@ function render() {
     y.domain(calcExtent(dataExtents));
     x.domain(calcExtent(timeExtents));
 
-    svg.select("g .y.axis").transition().duration(1500).call(d3.axisLeft(y));
-    svg.select("g .x.axis").transition().duration(1500).call(d3.axisBottom(x).tickSize(tickHeight).tickFormat(multiFormat).tickArguments([d3.timeMonth.every(1)]));
+    svg.select("g .y.axis").transition().duration(DURATION).call(d3.axisLeft(y));
+    svg.select("g .x.axis").transition().duration(DURATION).call(d3.axisBottom(x).tickSize(tickHeight).tickFormat(multiFormat).tickArguments([d3.timeMonth.every(1)]));
 
     // transition to new axes
     //let datasets = DATASETS.filter((d, i) => visible.has(i));
     for (let ds of DATASETS) {
-        svg.select("#line_"+ds).transition().duration(1500).attr("d", lines[ds]);
+        svg.select("#line_"+ds).transition().duration(DURATION).attr("d", lines[ds]);
     }
     // Updates zero line
-    svg.select("#line_zero").transition().duration(1500)
+    svg.select("#line_zero").transition().duration(DURATION)
         .attr("y1", y(100))
         .attr("y2", y(100));
 
     // Updates covid lockdown level
-    svg.select("g").selectAll("rect.level").transition().duration(1500)
+    svg.select("g").selectAll("rect.level").transition().duration(DURATION)
         .attr("x", (d) => x(d.dateFrom) )
         .attr("y", height)
         .attr("width", (d) => x(d.dateTo) - x(d.dateFrom) )
         .attr("height", tickHeight);
 
-    svg.selectAll("rect.lockdown").transition().duration(1500)
+    svg.selectAll("rect.lockdown").transition().duration(DURATION)
         .attr("x", (d) => x(d.dateFrom))
         .attr("y", 0)
         .attr("width", (d) => x(d.dateTo) - x(d.dateFrom) )
@@ -101,7 +104,7 @@ let svg = d3.select("#mobilityGraph").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-svg.append("text").attr("class","title").attr("x",width/2).attr("y",-10).text("London Mobility change");
+svg.append("text").attr("class","title").attr("x",width/2).attr("y",-8).text("London Mobility change");
 
 Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).then(function (data) {
     data[0].forEach(function (d) {
@@ -164,7 +167,7 @@ Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).the
     // Add the lines path.
     for (let ds of DATASETS) {
         svg.append("path")
-            .data( [data[0].filter( (d) => !isNaN(d[ds]))] )
+            .data( [data[0]] )
             .attr("class", "line "+ds)
             .attr("id", "line_"+ds)
             .attr("d", lines[ds]);
@@ -192,13 +195,13 @@ Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).the
     svg.append("text")
         .attr("class", "label")
         .attr("x",-margin.left+2)
-        .attr("y",height+8)
+        .attr("y",height+11)
         .text("Lockdown")
     svg.append("text")
         .attr("class", "label")
         .attr("x",-margin.left)
-        .attr("y",height+8)
-        .attr("dy", "1em")
+        .attr("y",height+11)
+        .attr("dy", "0.9em")
         .text("Stringency")
 
     // Tooltip - data
@@ -246,12 +249,12 @@ function mousemove() {
     focus.select("text.tooltip.back.date")
         .attr("transform",
             "translate(" + x(d.date) + "," +
-            y(y0) + ")")
+            (y(y0)+10) + ")")
         .text(formatDate(d.date));
     focus.select("text.tooltip.front.date")
         .attr("transform",
             "translate(" + x(d.date) + "," +
-            y(y0) + ")")
+            (y(y0)+10) + ")")
         .text(formatDate(d.date));
     focus.select(".x")
         .attr("x1", x(d.date))
