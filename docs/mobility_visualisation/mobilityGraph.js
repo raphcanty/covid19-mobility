@@ -199,10 +199,10 @@ Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).the
         .text("Restriction")
     svg.append("text")
         .attr("class", "label")
-        .attr("x",-margin.left)
+        .attr("x",-margin.left+2)
         .attr("y",height+11)
         .attr("dy", "0.9em")
-        .text("Stringency")
+        .text("stringency")
 
     // Tooltip - data
     let focus = svg.append("g")
