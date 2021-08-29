@@ -7,7 +7,7 @@ let margin = {top: 30, right: 50, bottom: 55, left: 70},
 let DURATION = 1000;
 
 let DATASETS = ["TfL_Bike", "google_parks", "google_residential", "google_grocery_pharmacy", "apple_driving",
-    "apple_transit", "apple_walking", "citymapper",  "google_retail_recreation", "google_transit", "google_workplaces",
+     "apple_walking", "apple_transit", "citymapper", "google_workplaces", "google_retail_recreation", "google_transit",
     "tomtom", "TfL_Bus", "TfL_Tube", "waze"];
 
 // parse the date / time

@@ -59,13 +59,13 @@ span {
 }
 
 .google_retail_recreation {
-    color: mediumturquoise;
-    accent-color: mediumturquoise;
+    color: darkslategray;
+    accent-color: darkslategray;
 }
 
 .google_grocery_pharmacy {
-    color: orangered;
-    accent-color: orangered;
+    color: #ff7941;
+    accent-color: #ff7941;
 }
 
 .google_parks {
@@ -79,8 +79,8 @@ span {
 }
 
 .google_workplaces{
-    color: darkolivegreen;
-    accent-color: darkolivegreen;
+    color: mediumturquoise;
+    accent-color: mediumturquoise;
 }
 
 .google_residential {
@@ -130,11 +130,11 @@ span {
 }
 
 .line.google_retail_recreation {
-    stroke: mediumturquoise;
+    stroke: darkslategray;
 }
 
 .line.google_grocery_pharmacy {
-    stroke: orangered;
+    stroke: #ff7941;
 }
 
 .line.google_parks {
@@ -146,7 +146,7 @@ span {
 }
 
 .line.google_workplaces{
-    stroke: darkolivegreen;
+    stroke: mediumturquoise;
 }
 
 .line.google_residential {
