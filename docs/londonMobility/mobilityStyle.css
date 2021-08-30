@@ -43,11 +43,12 @@ input[type="checkbox"]:checked + label:before {
     border-color: unset;
 }
 input[type="checkbox"].citymapper:checked + label:before {
-    background: green;
+    background: #009f00;
 }
+/* Make citymapper a bit lighter? */
 .citymapper {
-    color: green;
-    accent-color: green;
+    color: #009f00;
+    accent-color: #009f00;
 }
 
 input[type="checkbox"].apple_driving:checked + label:before {
@@ -163,7 +164,7 @@ input[type="checkbox"].TfL_Bike:checked + label:before {
 }
 
 .line.citymapper {
-    stroke: green;
+    stroke: #009f00;
 }
 
 .line.apple_driving {
@@ -255,16 +256,26 @@ rect.lockdown {
     opacity: 30%;
 }
 
+form {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .row {
     display: flex;
 }
 
 .cbuffer {
-    flex: 15%
+    flex: 15%;
 }
 
 .column {
     flex: 35%;
+}
+
+.column2 {
+    flex: 50%;
 }
 
 .column br {

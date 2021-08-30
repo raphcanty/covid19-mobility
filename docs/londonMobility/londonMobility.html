@@ -116,42 +116,40 @@
             <script type="text/javascript" src="mobilityGraph.js"></script>
             <form>
                 <div class="row">
-                    <div class="cbuffer"></div>
-                    <div class="column">
-                        <span class="apple_driving">⬤ </span><input type="checkbox" class="apple_driving" id="apple_driving" name="apple_driving" onclick="tickbox(name)" checked style="background: orange;">
+                    <div class="column2">
+                        <input type="checkbox" class="apple_driving" id="apple_driving" name="apple_driving" onclick="tickbox(name)" checked style="background: orange;">
                         <label for="apple_driving">Apple (driving) </label><span class="apple_driving" id="apple_driving_fig"></span><br>
-                        <span class="apple_transit">⬤ </span><input type="checkbox" class="apple_transit" id="apple_transit" name="apple_transit" onclick="tickbox(name)" checked>
+                        <input type="checkbox" class="apple_transit" id="apple_transit" name="apple_transit" onclick="tickbox(name)" checked>
                         <label for="apple_transit">Apple (public transport) </label><span class="apple_transit" id="apple_transit_fig"></span><br>
-                        <span class="apple_walking">⬤ </span><input type="checkbox" id="apple_walking" class="apple_walking" name="apple_walking" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="apple_walking" class="apple_walking" name="apple_walking" onclick="tickbox(name)" checked>
                         <label for="apple_walking"> Apple (walking) </label><span class="apple_walking" id="apple_walking_fig"></span><br><br>
-                        <span class="google_grocery_pharmacy">⬤ </span><input type="checkbox" id="google_grocery_pharmacy" class="google_grocery_pharmacy" name="google_grocery_pharmacy" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="google_grocery_pharmacy" class="google_grocery_pharmacy" name="google_grocery_pharmacy" onclick="tickbox(name)" checked>
                         <label for="google_grocery_pharmacy"> Google (grocery &amp; pharmacy) </label><span class="google_grocery_pharmacy" id="google_grocery_pharmacy_fig"></span><br>
-                        <span class="google_parks">⬤ </span><input type="checkbox" id="google_parks" class="google_parks" name="google_parks" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="google_parks" class="google_parks" name="google_parks" onclick="tickbox(name)" checked>
                         <label for="google_parks"> Google (parks) </label><span class="google_parks" id="google_parks_fig"></span><br>
-                        <span class="google_residential">⬤ </span><input type="checkbox" id="google_residential" class="google_residential" name="google_residential" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="google_residential" class="google_residential" name="google_residential" onclick="tickbox(name)" checked>
                         <label for="google_residential"> Google (residential) </label><span class="google_residential" id="google_residential_fig"></span><br>
-                        <span class="google_retail_recreation">⬤ </span><input type="checkbox" id="google_retail_recreation" class="google_retail_recreation" name="google_retail_recreation" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="google_retail_recreation" class="google_retail_recreation" name="google_retail_recreation" onclick="tickbox(name)" checked>
                         <label for="google_retail_recreation"> Google (retail &amp; recreation) </label><span class="google_retail_recreation" id="google_retail_recreation_fig"></span><br>
-                        <span class="google_transit">⬤ </span><input type="checkbox" id="google_transit" class="google_transit" name="google_transit" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="google_transit" class="google_transit" name="google_transit" onclick="tickbox(name)" checked>
                         <label for="google_transit"> Google (transport stations) </label><span class="google_transit" id="google_transit_fig"></span><br>
-                        <span class="google_workplaces">⬤ </span><input type="checkbox" id="google_workplaces" class="google_workplaces" name="google_workplaces" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="google_workplaces" class="google_workplaces" name="google_workplaces" onclick="tickbox(name)" checked>
                         <label for="google_workplaces"> Google (workplaces) </label><span class="google_workplaces" id="google_workplaces_fig"></span><br>
                     </div>
-                    <div class="column">
-                        <span class="citymapper">⬤ </span><input type="checkbox" id="citymapper" class="citymapper" name="citymapper" onclick="tickbox(name)" checked>
+                    <div class="column2">
+                        <input type="checkbox" id="citymapper" class="citymapper" name="citymapper" onclick="tickbox(name)" checked>
                         <label for="citymapper"> Citymapper </label><span class="citymapper" id="citymapper_fig"></span><br><br>
-                        <span class="tomtom">⬤ </span><input type="checkbox" class="tomtom" id="tomtom" name="tomtom" onclick="tickbox(name)" checked>
+                        <input type="checkbox" class="tomtom" id="tomtom" name="tomtom" onclick="tickbox(name)" checked>
                         <label for="tomtom"> Tomtom </label><span class="tomtom" id="tomtom_fig"></span><br><br>
-                        <span class="TfL_Bus">⬤ </span><input type="checkbox" id="TfL_Bus" class="TfL_Bus" name="TfL_Bus" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="TfL_Bus" class="TfL_Bus" name="TfL_Bus" onclick="tickbox(name)" checked>
                         <label for="TfL_Bus"> Transport for London (Bus) </label><span class="TfL_Bus" id="TfL_Bus_fig"></span><br>
-                        <span class="TfL_Tube">⬤ </span><input type="checkbox" id="TfL_Tube" class="TfL_Tube" name="TfL_Tube" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="TfL_Tube" class="TfL_Tube" name="TfL_Tube" onclick="tickbox(name)" checked>
                         <label for="TfL_Tube"> Transport for London (Underground) </label><span class="TfL_Tube" id="TfL_Tube_fig"></span><br>
-                        <span class="TfL_Bike">⬤ </span><input type="checkbox" id="TfL_Bike" class="TfL_Bike" name="TfL_Bike" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="TfL_Bike" class="TfL_Bike" name="TfL_Bike" onclick="tickbox(name)" checked>
                         <label for="TfL_Bike"> Transport for London (Cycle Hire) </label><span class="TfL_Bike" id="TfL_Bike_fig"></span><br><br>
-                        <span class="waze">⬤ </span><input type="checkbox" id="waze" class="waze" name="waze" onclick="tickbox(name)" checked>
+                        <input type="checkbox" id="waze" class="waze" name="waze" onclick="tickbox(name)" checked>
                         <label for="waze"> Waze </label><span class="waze" id="waze_fig"></span><br><br>
                     </div>
-                    <div class="cbuffer"></div>
                 </div>
             </form>
 
