@@ -287,16 +287,16 @@ text.tooltip.back {
     stroke: white;
     stroke-width: 4px;
     opacity: 0.8;
-    font: 16px Arial;
+    font: 14px Arial;
 }
 
 text.tooltip.front.date {
     text-anchor: middle;
     fill: black;
-    font: 16px Arial;
+    font: 14px Arial;
 }
 
 line.x {
     stroke: black;
-    opacity: 0.5;
+    stroke-dasharray: 3,3;
 }

@@ -61,19 +61,16 @@ label {
 line.yCases {
     stroke: green;
     stroke-dasharray: 3,3;
-    opacity: 0.5;
 }
 
 line.yDeaths {
     stroke: darkorange;
     stroke-dasharray: 3,3;
-    opacity: 0.5;
 }
 
 line.x {
     stroke: black;
     stroke-dasharray: 3,3;
-    opacity: 0.5;
 }
 
 text.tooltip.back {

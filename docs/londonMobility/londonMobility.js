@@ -55,7 +55,7 @@ function render() {
     y.domain(calcExtent(dataExtents));
     x.domain(calcExtent(timeExtents));
 
-    svg.select("g .y.axis").transition().duration(DURATION).call(d3.axisLeft(y));
+    svg.select("g .y.axis").transition().duration(DURATION).call(d3.axisLeft(y).tickFormat( (d) => d+'%'));
     svg.select("g .x.axis").transition().duration(DURATION).call(d3.axisBottom(x).tickSize(tickHeight).tickFormat(multiFormat).tickArguments([d3.timeMonth.every(1)]));
 
     // transition to new axes
@@ -182,13 +182,13 @@ Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).the
     // Add the y Axes
     svg.append("g")
         .attr("class", "y axis")
-        .call(d3.axisLeft(y))
+        .call(d3.axisLeft(y).tickFormat( (d) => d+'%') )
         .append("text")
         .attr("class", "label")
         .attr("transform", "rotate(-90)")
         .attr("y", -margin.left)
         .attr("x", -(height / 4))
-        .attr("dy", "2em")
+        .attr("dy", "1em")
         .text("Percentage of pre-covid demand");
 
     // Add label
