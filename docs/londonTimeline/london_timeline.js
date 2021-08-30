@@ -292,7 +292,7 @@ Promise.all([d3.csv("./london_covid_stats.csv"), d3.csv("./london_lockdown_level
 
 
 function updateEvent(value) {
-    let d = eventData[(+value)-1]
+    let d = eventData[+value]
     d3.select("line.selectedEvent").attr("x1", x(d.date)).attr("x2", x(d.date));
     d3.selectAll("circle.event").style("fill", "black");//.attr("r", (d) => d.featured ? 5 : 3 );
     d3.select("circle.event."+shortFormatDate(d.date)).style("fill", "limegreen");//.attr("r", (d) => d.featured ? 6 : 4 );

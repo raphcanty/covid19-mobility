@@ -114,7 +114,7 @@
 
             <div id="londonTimeline" style="text-align: center;"></div>
             <script type="text/javascript" src="./london_timeline.js"></script>
-            <div class="sliderContainer"><input class="slider" type="range" min="0" max="52" value="0" id="eventSelect" oninput="updateEvent(value)"></div>
+            <label for="eventSelect" style="display: none">Select event:</label><div class="sliderContainer"><input class="slider" type="range" min="0" max="59" value="0" id="eventSelect" oninput="updateEvent(value)"></div>
             <div class="eventInfo">
                 <p><b><span id="eventDate"></span></b>
                     <span id="eventDesc">Use the slider to look through events</span>
