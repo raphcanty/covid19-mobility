@@ -16,6 +16,7 @@ text.title {
 label {
     font-family: Arial, sans-serif;
     font-size: 16px;
+    margin: 0 0 0 0;
 }
 
 .axis text {
@@ -38,76 +39,124 @@ span {
     font-size: 16px;
 }
 
+input[type="checkbox"]:checked + label:before {
+    border-color: unset;
+}
+input[type="checkbox"].citymapper:checked + label:before {
+    background: green;
+}
 .citymapper {
     color: green;
     accent-color: green;
 }
 
+input[type="checkbox"].apple_driving:checked + label:before {
+    background: deeppink;
+}
 .apple_driving {
     color: deeppink;
     accent-color: deeppink;
 }
 
+input[type="checkbox"].apple_transit:checked + label:before {
+    background: darkorchid;
+}
 .apple_transit {
     color: darkorchid;
     accent-color: darkorchid;
 }
 
+input[type="checkbox"].apple_walking:checked + label:before {
+    background: limegreen;
+}
 .apple_walking {
     color: limegreen;
     accent-color: limegreen;
 }
 
+input[type="checkbox"].google_retail_recreation:checked + label:before {
+    background: darkslategray;
+}
 .google_retail_recreation {
     color: darkslategray;
     accent-color: darkslategray;
 }
 
+input[type="checkbox"].google_grocery_pharmacy:checked + label:before {
+    background: #ff7941;
+}
 .google_grocery_pharmacy {
     color: #ff7941;
     accent-color: #ff7941;
 }
 
+input[type="checkbox"].google_parks:checked + label:before {
+    background: lightslategray;
+}
 .google_parks {
     color: lightslategray;
     accent-color: lightslategray;
 }
 
+input[type="checkbox"].google_transit:checked + label:before {
+    background: hotpink;
+}
 .google_transit {
     color: hotpink;
     accent-color: hotpink;
 }
 
+input[type="checkbox"].google_workplaces:checked + label:before {
+    background: mediumturquoise;
+}
 .google_workplaces{
     color: mediumturquoise;
     accent-color: mediumturquoise;
 }
 
+input[type="checkbox"].google_residential:checked + label:before {
+    background: dodgerblue;
+}
 .google_residential {
     color: dodgerblue;
     accent-color: dodgerblue;
 }
 
+input[type="checkbox"].tomtom:checked + label:before {
+    background: midnightblue;
+}
 .tomtom {
     color: midnightblue;
     accent-color: midnightblue;
 }
 
+input[type="checkbox"].waze:checked + label:before {
+    background: darkgoldenrod;
+}
 .waze {
     color: darkgoldenrod;
     accent-color: darkgoldenrod;
 }
 
+input[type="checkbox"].TfL_Tube:checked + label:before {
+    background: blue;
+}
 .TfL_Tube {
     color: blue;
     accent-color: blue;
 }
 
+input[type="checkbox"].TfL_Bus:checked + label:before {
+    background: red;
+}
 .TfL_Bus {
     color: red;
     accent-color: red;
 }
 
+input[type="checkbox"].TfL_Bike:checked + label:before {
+    background: orange;
+}
 .TfL_Bike {
     color: orange;
     accent-color: orange;
@@ -211,11 +260,15 @@ rect.lockdown {
 }
 
 .cbuffer {
-    flex: 20%
+    flex: 15%
 }
 
 .column {
-    flex: 30%;
+    flex: 35%;
+}
+
+.column br {
+    margin: 0 0 0 0;
 }
 
 text.tooltip.back {

@@ -1,0 +1,200 @@
+p {
+    font-family: Arial, sans-serif;
+}
+
+text.title {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    text-anchor: middle;
+}
+
+text.legend {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-anchor: end;
+}
+
+.axis text {
+    font-size: 14px;
+    fill: black;
+}
+
+/* For data lines */
+.line {
+    fill: none;
+    stroke-width: 2px;
+}
+
+.line.cases {
+    stroke: green;
+}
+
+.line.deaths {
+    stroke: darkorange;
+}
+
+
+/* For data axis labels */
+.axis {
+    fill: none;
+}
+
+.axis.cases text {
+    fill: green;
+}
+
+.axis.deaths text {
+    fill: darkorange;
+}
+
+text.label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-anchor: middle;
+}
+
+label {
+    display: inline;
+}
+
+/* Tooltip */
+line.yCases {
+    stroke: green;
+    stroke-dasharray: 3,3;
+    opacity: 0.5;
+}
+
+line.yDeaths {
+    stroke: darkorange;
+    stroke-dasharray: 3,3;
+    opacity: 0.5;
+}
+
+line.x {
+    stroke: black;
+    stroke-dasharray: 3,3;
+    opacity: 0.5;
+}
+
+text.tooltip.back {
+    text-anchor: end;
+    stroke: white;
+    stroke-width: 4px;
+    opacity: 0.8;
+    font: 12px Arial;
+}
+
+text.tooltip.back.deaths {
+    text-anchor: start;
+}
+text.tooltip.front.cases {
+    text-anchor: end;
+    fill: green;
+    font: 12px Arial;
+}
+
+text.tooltip.front.deaths {
+    fill: darkorange;
+    font: 12px Arial;
+}
+
+text.tooltip.front.date {
+    text-anchor: end;
+    fill: black;
+    font: 12px Arial;
+}
+
+circle.tooltip {
+    fill: none;
+    stroke: black;
+}
+
+circle.selection {
+    fill: none;
+    stroke: black;
+    cursor: pointer;
+}
+
+/* Colours of lockdown level */
+
+rect.level0 {
+    fill: #e6e6e6;
+}
+
+rect.level1 {
+    fill: #fbbdad;
+}
+
+rect.level2 {
+    fill: #ff9276;
+}
+
+rect.level3 {
+    fill: #ff6141;
+}
+
+rect.level4 {
+    fill: #ff0000;
+}
+
+rect.level5 {
+    fill: #D90000;
+}
+
+rect.lockdown {
+    fill: grey;
+    opacity: 30%;
+}
+
+/* Selecting and displaying events */
+
+line.eventLine {
+    stroke-width: 2;
+    stroke: black;
+}
+
+line.selectedEvent {
+    stroke: limegreen;
+    stroke-width: 2px;
+}
+
+.slider {
+    width: 820px;
+    -webkit-appearance: none;
+    height: 20px;
+    opacity: 2;
+}
+
+.sliderContainer {
+    text-align: center;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: limegreen;
+    margin-top: -5px;
+}
+
+.slider:focus {
+    outline: none;
+}
+
+.slider:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
