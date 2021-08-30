@@ -7,11 +7,11 @@
 -->
 <html lang="en">
 <head>
-    <title>Visualising London's COVID-19 Lockdowns | Covid-19 Impacts on Crime Changes in Cities</title>
+    <title>Visualising London's COVID-19 Mobility Change | Covid-19 Impacts on Crime Changes in Cities</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../assets/css/main.css"/>
-    <link rel="stylesheet" href="./mobilityStyle.css"/>
+    <link rel="stylesheet" href="londonMobilityStyle.css"/>
     <script src="../assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/d3.min.js"></script>
     <script>
@@ -27,15 +27,14 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="../index.html">COVID-19 and Crime</a></h1>
+        <h1><a href="../index.html">How has Travel Demand been impacted by COVID-19?</a></h1>
         <nav class="links">
             <ul>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../london.html">London</a></li>
+                <li><a href="londonMobility.html">London Mobility</a></li>
+                <li><a href="../londonTimeline/londonTimeline.html">London Timeline</a></li>
                 <li><a href="../new_york.html">New York</a></li>
                 <li><a href="../sydney.html">Sydney</a></li>
                 <li><a href="../hong_kong.html">Hong Kong</a></li>
-                <li><a href="../compare.html">Comparative Studies</a></li>
             </ul>
         </nav>
         <nav class="main">
@@ -55,39 +54,34 @@
         <section>
             <ul class="links">
                 <li>
-                    <a href="../about.html">
-                        <h3>About</h3>
-                        <p>More about the Study</p>
+                    <a href="londonMobility.html">
+                        <h3>London Mobility</h3>
+                        <p>London's mobility change</p>
                     </a>
                 </li>
                 <li>
-                    <a href="../london.html">
-                        <h3>London</h3>
-                        <p>London Context and Crime Change</p>
+                    <a href="../londonTimeline/londonTimeline.html">
+                        <h3>London Timeline</h3>
+                        <p>Visualising London's COVID-19 response</p>
                     </a>
                 </li>
                 <li>
                     <a href="../new_york.html">
                         <h3>New York</h3>
-                        <p>New York Context and Crime Change</p>
+                        <p>New York Data</p>
                     </a>
                 </li>
                 <li>
+                <li>
                     <a href="../sydney.html">
                         <h3>Sydney</h3>
-                        <p>Sydney Context and Crime Change</p>
+                        <p>Sydney Data</p>
                     </a>
                 </li>
                 <li>
                     <a href="../hong_kong.html">
                         <h3>Hong Kong</h3>
-                        <p>Hong Kong Context and Crime Change</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="../compare.html">
-                        <h3>Comparative Studies</h3>
-                        <p>Comparison between cities</p>
+                        <p>Hong Kong Data</p>
                     </a>
                 </li>
             </ul>
@@ -100,24 +94,21 @@
         <article class="post">
             <header>
                 <div class="title">
-                    <h2>Visualising London's Covid-19 Lockdowns</h2>
-                    <p>Visualisation</p>
-                </div>
-                <div class="meta">
-                    <time class="published" datetime="2021-06-01">June 1, 2021</time>
-                    <a href="https://linkedin.com/in/raphael-canty" class="author"><span
-                            class="name">Raphael Canty</span><!--<img src="images/yijing.jpg" alt=""/>--></a>
+                    <h2>Visualising London's Covid-19 Mobility Change</h2>
+                    <p>Visualisation by <a href="https://linkedin.com/in/raphael-canty">Raphael Canty</a></p>
                 </div>
             </header>
-            <p> Visualising lockdown events alongside daily new cases of Covid-19 reveals the cause and effect of London's public health response. This interactive visualisation was created using <a href="https://d3js.org">d3.js</a>, displaying London's daily new cases and deaths over time against the approximate level of lockdown restrictions.</p>
-            <p> Hover over the line chart to see exact numbers of cases and deaths. Click on the dots at the bottom to highlight events and see their details below. Events include milestones of London's and the UK's response to coronavirus, especially in terms of transport.</p>
+            <p> Several public and private-sector datasets have been made available which measure mobility change of London during the COVID-19 Pandemic. This interactive visualisation was created using <a href="https://d3js.org">d3.js</a> and is intended to display a collection of these datasets together for them to be compared and contrasted over time.</p>
+            <p> To display on the chart, each dataset's format was standardised to a percentage score of 100: some recorded this as percentage change from baseline (-25% = 75%) or as a fraction (0.75 = 75%). The TfL Cycle Hire category was created for this visualisation using TfL usage statistics. Data was taken from when it's first available until 31 July 2021. </p>
+            <p> A measure of restriction stringency is also included, with lockdown periods highlighted so that mobility can be visualised in the context of city-wide public health interventions. It is interesting to analyse how they shaped the curves. </p>
+            <p> Click the each category to turn it on or off, allowing comparison between a smaller (and more readable) number of categories. Hovering over the chart displays the date and the readings for each category. </p>
 
             <div id="mobilityGraph" style="text-align: center;"></div>
-            <script type="text/javascript" src="mobilityGraph.js"></script>
+            <script type="text/javascript" src="londonMobility.js"></script>
             <form>
                 <div class="row">
                     <div class="column2">
-                        <input type="checkbox" class="apple_driving" id="apple_driving" name="apple_driving" onclick="tickbox(name)" checked style="background: orange;">
+                        <input type="checkbox" class="apple_driving" id="apple_driving" name="apple_driving" onclick="tickbox(name)" checked>
                         <label for="apple_driving">Apple (driving) </label><span class="apple_driving" id="apple_driving_fig"></span><br>
                         <input type="checkbox" class="apple_transit" id="apple_transit" name="apple_transit" onclick="tickbox(name)" checked>
                         <label for="apple_transit">Apple (public transport) </label><span class="apple_transit" id="apple_transit_fig"></span><br>
@@ -153,8 +144,15 @@
                 </div>
             </form>
 
-            <p>London COVID-19 cases and deaths data from the UK Government's API at <a href="https://coronavirus.data.gov.uk/">https://coronavirus.data.gov.uk/</a>. Lockdown level is an indication only, determined by the author based on the lockdown restrictions in London and should not to be confused with the UK Government's COVID-19 alert level system. Events were collated from multiple sources, including <a href="https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_Kingdom_(January–June_2020)">Wikipedia</a> and <a href="https://tfl.gov.uk/info-for/media/press-releases/">TfL Press releases</a>. Examples from <a href="https://bl.ocks.org/d3noob">d3noob</a> were helpful for creating the visualisation.</p>
-            <p>A previous version of this visualisation concept is available as a pair of static images below. They use <a href="https://coronavstats.co.uk/england/localData">https://coronavstats.co.uk/england/localData</a> as a backing column chart.</p>
+            <p>Data was sourced from:</p>
+            <ul>
+                <li>Apple</li>
+                <li>Citymapper</li>
+                <li>Google</li>
+                <li>TomTom</li>
+                <li>Transport for London via Gov.uk</li>
+                <li>Waze</li>
+            </ul>
         </article>
 
     </div>
