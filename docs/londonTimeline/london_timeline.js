@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-let margin = {top: 30, right: 60, bottom: 50, left: 80},
+let margin = {top: 30, right: 60, bottom: 50, left: 60},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
     tickHeight = 27;
@@ -55,7 +55,7 @@ legend.selectAll("rect")
     .attr("y", (d) => (d+1)*20 )
     .attr("width", 40)
     .attr("height", 20)
-legend.append("text").attr("class","legend").attr("x",width-10).attr("y",10).text("London lockdown restrictions");
+legend.append("text").attr("class","legend").attr("x",width-10).attr("y",10).text("London restriction stringency");
 legend.append("text").attr("class","legend").attr("x",width-55).attr("y",35).text("No restrictions");
 legend.append("text").attr("class","legend").attr("x",width-55).attr("y",135).text("Full lockdown");
 
@@ -123,14 +123,14 @@ Promise.all([d3.csv("./london_covid_stats.csv"), d3.csv("./london_lockdown_level
         // Add the y Axes
         svg.append("g")
             .attr("class", "cases axis")
-            .call(d3.axisLeft(yCases))
+            .call(d3.axisLeft(yCases).tickFormat( (d) => d/1000 ))
                 .append("text")
                 .attr("class", "label")
                 .attr("transform", "rotate(-90)")
                 .attr("y", -margin.left)
                 .attr("x", -(height / 2))
                 .attr("dy", "1em")
-                .text("New Covid cases per day");
+                .text("New Covid cases per day (thousands)");
         svg.append("g")
             .attr("class", "deaths axis")
             .attr("transform", "translate("+width+",0)")
@@ -154,7 +154,7 @@ Promise.all([d3.csv("./london_covid_stats.csv"), d3.csv("./london_lockdown_level
                 .style("fill", "black");
 
         d3.select("g.eventCircles").append("line").attr("class","selectedEvent").attr("y1", height).attr("y2", height+tickHeight).attr("x1",-100).attr("x2",-100);
-        d3.select("g.eventCircles").append("text").attr("class","label").attr("x", -margin.left+42).attr("y", height+tickHeight-9).text("Events");
+        d3.select("g.eventCircles").append("text").attr("class","label").attr("x", -margin.left+28).attr("y", height+tickHeight-9).text("Events");
 
         // Tooltip - data
         var focus = svg.append("g")
