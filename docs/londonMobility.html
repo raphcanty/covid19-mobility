@@ -10,13 +10,13 @@
     <title>Visualising London's COVID-19 Mobility Change | Covid-19 Impacts on Crime Changes in Cities</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="../assets/css/main.css"/>
-    <link rel="stylesheet" href="londonMobilityStyle.css"/>
-    <script src="../assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../assets/js/d3.min.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="londonMobility/londonMobilityStyle.css"/>
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/d3.min.js"></script>
     <script>
         $(function () {
-            $("#footer").load("../footer.html");
+            $("#footer").load("footer.html");
         });
     </script>
 </head>
@@ -27,11 +27,11 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="../index.html">How has Travel Demand been impacted by COVID-19?</a></h1>
+        <h1><a href="index.html">How has Travel Demand been impacted by COVID-19?</a></h1>
         <nav class="links">
             <ul>
                 <li><a href="londonMobility.html">London Mobility</a></li>
-                <li><a href="../londonTimeline/londonTimeline.html">London Timeline</a></li>
+                <li><a href="londonTimeline.html">London Timeline</a></li>
                 <li><a href="../new_york.html">New York</a></li>
                 <li><a href="../sydney.html">Sydney</a></li>
                 <li><a href="../hong_kong.html">Hong Kong</a></li>
@@ -60,7 +60,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../londonTimeline/londonTimeline.html">
+                    <a href="londonTimeline.html">
                         <h3>London Timeline</h3>
                         <p>Visualising London's COVID-19 response</p>
                     </a>
@@ -101,10 +101,10 @@
             <p> Several public and private-sector datasets have been made available which measure mobility change of London during the COVID-19 Pandemic. This interactive visualisation was created using <a href="https://d3js.org">d3.js</a> and is intended to display a collection of these datasets together for them to be compared and contrasted over time.</p>
             <p> To display on the chart, each dataset's format was standardised to a percentage score of 100: some recorded this as percentage change from baseline (-25% = 75%) or as a fraction (0.75 = 75%). The TfL Cycle Hire category was created for this visualisation using TfL usage statistics. Data was taken from when it's first available until 31 July 2021. </p>
             <p> A measure of restriction stringency is also included, with lockdown periods highlighted so that mobility can be visualised in the context of city-wide public health interventions. It is interesting to analyse how they shaped the curves. </p>
-            <p> Click the each category to turn it on or off, allowing comparison between a smaller (and more readable) number of categories. Hovering over the chart displays the date and the readings for each category. </p>
+            <p> Click each category to turn it on or off. This allows comparison between a smaller (and more readable) number of categories. Hovering over the chart displays the date and the readings for each category. </p>
 
             <div id="mobilityGraph" style="text-align: center;"></div>
-            <script type="text/javascript" src="londonMobility.js"></script>
+            <script type="text/javascript" src="londonMobility/londonMobility.js"></script>
             <form>
                 <div class="row">
                     <div class="column2">
@@ -163,11 +163,11 @@
 </div>
 
 <!-- Scripts -->
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/browser.min.js"></script>
-<script src="../assets/js/breakpoints.min.js"></script>
-<script src="../assets/js/util.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>

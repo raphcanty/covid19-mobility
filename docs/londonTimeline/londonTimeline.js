@@ -38,7 +38,7 @@ let eventData = null;
 // append the svg object to the body of the page
 // appends a 'group' element to 'svg'
 // moves the 'group' element to the top left margin
-var svg = d3.select("#londonTimeline").append("svg")
+let svg = d3.select("#londonTimeline").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -47,7 +47,7 @@ var svg = d3.select("#londonTimeline").append("svg")
 svg.append("text").attr("class","title").attr("x",width/2).attr("y",-8).text("London COVID-19 Timeline");
 
 // Set up legend
-var legend = svg.append("g").attr("class", "legend");
+let legend = svg.append("g").attr("class", "legend");
 legend.selectAll("rect")
     .data([0,1,2,3,4,5]).enter().append("rect")
     .attr("class", (d) => "level"+d )
@@ -59,7 +59,7 @@ legend.append("text").attr("class","legend").attr("x",width-10).attr("y",10).tex
 legend.append("text").attr("class","legend").attr("x",width-55).attr("y",35).text("No restrictions");
 legend.append("text").attr("class","legend").attr("x",width-55).attr("y",135).text("Full lockdown");
 
-Promise.all([d3.csv("./london_covid_stats.csv"), d3.csv("./london_lockdown_level.csv"), d3.csv("./london_covid_events.csv")])
+Promise.all([d3.csv("londonTimeline/london_covid_stats.csv"), d3.csv("londonTimeline/london_lockdown_level.csv"), d3.csv("londonTimeline/london_covid_events.csv")])
     .then(function (data) {
         data[0].forEach(function (d) {
             //return {date: parseTime(d.date), cases:+d.cases, deaths:+d.deaths};
@@ -157,7 +157,7 @@ Promise.all([d3.csv("./london_covid_stats.csv"), d3.csv("./london_lockdown_level
         d3.select("g.eventCircles").append("text").attr("class","label").attr("x", -margin.left+28).attr("y", height+tickHeight-9).text("Events");
 
         // Tooltip - data
-        var focus = svg.append("g")
+        let focus = svg.append("g")
             .style("display", "none");
 
         // append the x line
@@ -223,7 +223,7 @@ Promise.all([d3.csv("./london_covid_stats.csv"), d3.csv("./london_lockdown_level
             .on("mousemove", mousemove);
 
         function mousemove() {
-            var x0 = x.invert(d3.pointer(event, this)[0]),
+            let x0 = x.invert(d3.pointer(event, this)[0]),
                 i = bisectDate(data[0], x0, 1),
                 d0 = data[0][i - 1],
                 d1 = data[0][i],

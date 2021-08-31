@@ -106,7 +106,7 @@ let svg = d3.select("#mobilityGraph").append("svg")
 
 svg.append("text").attr("class","title").attr("x",width/2).attr("y",-8).text("London Mobility change");
 
-Promise.all([d3.csv("all_london.csv"), d3.csv("london_lockdown_level.csv")]).then(function (data) {
+Promise.all([d3.csv("londonMobility/all_london.csv"), d3.csv("londonMobility/london_lockdown_level.csv")]).then(function (data) {
     data[0].forEach(function (d) {
         //return {date: parseTime(d.date), cases:+d.cases, deaths:+d.deaths};
         d.date = parseTime(d.date);
