@@ -7,8 +7,8 @@ let marginMob = {top: 30, right: 5, bottom: 50, left: 70},
 let DURATION = 1000;
 
 let DATASETS = ["google_parks", "google_residential", "google_grocery_pharmacy", "apple_driving",
-     "apple_walking", "apple_transit", "citymapper", "google_workplaces", "google_retail_recreation", "google_transit",
-    "tomtom", "waze"];
+     "apple_walking", "citymapper", "google_workplaces", "google_retail_recreation", "google_transit",
+    "tomtom"];
 
 // parse the date / time
 //let parseTime = d3.timeParse("%Y-%m-%d"),
@@ -104,9 +104,9 @@ let svgMob = d3.select("#mobilityGraph").append("svg")
     .append("g")
     .attr("transform", "translate(" + marginMob.left + "," + marginMob.top + ")");
 
-svgMob.append("text").attr("class","title").attr("x",widthMob/2).attr("y",-8).text("New York Mobility change");
+svgMob.append("text").attr("class","title").attr("x",widthMob/2).attr("y",-8).text("Hong Kong Mobility change");
 
-Promise.all([d3.csv("newYork/all_new_york.csv"), d3.csv("newYork/newYork_lockdown_level.csv")]).then(function (data) {
+Promise.all([d3.csv("hongKong/all_hong_kong.csv"), d3.csv("hongKong/hongKong_lockdown_level.csv")]).then(function (data) {
     data[0].forEach(function (d) {
         //return {date: parseTime(d.date), cases:+d.cases, deaths:+d.deaths};
         d.date = parseTime(d.date);
