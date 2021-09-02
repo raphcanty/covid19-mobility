@@ -7,11 +7,12 @@
 -->
 <html lang="en">
 <head>
-    <title>Visualising London's COVID-19 Mobility Change | Covid-19 Impacts on Crime Changes in Cities</title>
+    <title>Sydney Comparison | Covid-19 Impacts on Crime Changes in Cities</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
-    <link rel="stylesheet" href="londonMobility/londonMobilityStyle.css"/>
+    <link rel="stylesheet" href="sydney/sydneyMobilityStyle.css"/>
+    <link rel="stylesheet" href="sydney/sydneyTimelineStyle.css"/>
     <script src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/d3.min.js"></script>
     <script>
@@ -38,17 +39,28 @@
         <article class="post">
             <header>
                 <div class="title">
-                    <h2>Visualising London's Covid-19 Mobility Change</h2>
+                    <h2>Comparison to Sydney</h2>
                     <p>Visualisation by <a href="https://linkedin.com/in/raphael-canty">Raphael Canty</a></p>
                 </div>
             </header>
-            <p> Several public and private-sector datasets have been made available which measure mobility change of London during the COVID-19 Pandemic. This interactive visualisation was created using <a href="https://d3js.org">d3.js</a> and is intended to display a collection of these datasets together for them to be compared and contrasted over time.</p>
-            <p> To display on the chart, each dataset's format was standardised to a percentage score of 100: some recorded this as percentage change from baseline (-25% = 75%) or as a fraction (0.75 = 75%). The TfL Cycle Hire category was created for this visualisation using TfL usage statistics. Data was taken from when it's first available until 31 July 2021. </p>
-            <p> A measure of restriction stringency is also included, with lockdown periods highlighted so that mobility can be visualised in the context of city-wide public health interventions. It is interesting to analyse how they shaped the curves. </p>
-            <p> Click each category to turn it on or off. This allows comparison between a smaller (and more readable) number of categories. Hovering over the chart displays the date and the readings for each category. </p>
+            <p> Sydney, Australia adopted a very different pandemic response strategy to London and the UK, choosing to supress the virus to zero active cases through closing borders, implementing a hotel quarantine program for arriving travellers and locking down early.</p>
+            <p> Sydney's COVID-19 response timeline is produced below, based on the same <a href="https://d3js.org">d3.js</a> code as London's. You may scrub through events using the slider.</p>
+
+            <div id="sydneyTimeline" style="text-align: center;"></div>
+            <script type="text/javascript" src="sydney/sydneyTimeline.js"></script>
+            <label for="eventSelect" style="display: none">Select event:</label><div class="sliderContainer"><input class="slider" type="range" min="0" max="47" value="0" id="eventSelect" oninput="updateEvent(value)"></div>
+            <div class="eventInfo">
+                <p><b><span id="eventDate"></span></b>
+                    <span id="eventDesc">Use the slider to look through events</span>
+                    <br>
+                    <a id="eventURL" href="" target="_blank" rel="noopener noreferrer"></a></p>
+            </div>
+
+            <p> All data sources used for the London mobility change chart are available for Sydney, with the exception of Transport for London's data which only applies to public transport in London.</p>
+            <p> Below is a Sydney's mobility change chart, where you may enable or disable each individual source of data. Note that a full lockdown was implemented in Sydney on 28 July, just before the end of this data series.</p>
 
             <div id="mobilityGraph" style="text-align: center;"></div>
-            <script type="text/javascript" src="londonMobility/londonMobility.js"></script>
+            <script type="text/javascript" src="sydney/sydneyMobility.js"></script>
             <form>
                 <div class="row">
                     <div class="column2">
@@ -76,25 +88,21 @@
                         <label for="citymapper"> Citymapper </label><span class="citymapper" id="citymapper_fig"></span><br><br>
                         <input type="checkbox" class="tomtom" id="tomtom" name="tomtom" onclick="tickbox(name)" checked>
                         <label for="tomtom"> Tomtom </label><span class="tomtom" id="tomtom_fig"></span><br><br>
-                        <input type="checkbox" id="TfL_Bus" class="TfL_Bus" name="TfL_Bus" onclick="tickbox(name)" checked>
-                        <label for="TfL_Bus"> Transport for London (Bus) </label><span class="TfL_Bus" id="TfL_Bus_fig"></span><br>
-                        <input type="checkbox" id="TfL_Tube" class="TfL_Tube" name="TfL_Tube" onclick="tickbox(name)" checked>
-                        <label for="TfL_Tube"> Transport for London (Underground) </label><span class="TfL_Tube" id="TfL_Tube_fig"></span><br>
-                        <input type="checkbox" id="TfL_Bike" class="TfL_Bike" name="TfL_Bike" onclick="tickbox(name)" checked>
-                        <label for="TfL_Bike"> Transport for London (Cycle Hire) </label><span class="TfL_Bike" id="TfL_Bike_fig"></span><br><br>
                         <input type="checkbox" id="waze" class="waze" name="waze" onclick="tickbox(name)" checked>
                         <label for="waze"> Waze </label><span class="waze" id="waze_fig"></span><br><br>
                     </div>
                 </div>
             </form>
 
+            <p> Note that Google's data does not provide a breakdown for Greater Sydney, instead separating area into local council areas. Therefore, only the inner city area could be extracted for the chart.</p>
+
             <p>Data was sourced from:</p>
             <ul>
+                <li>Sydney COVID-19 Case and Death data: <a href="https://data.nsw.gov.au/nsw-covid-19-data">NSW Health</a></li>
                 <li>Apple: <a href="https://covid19.apple.com/mobility">"Apple Maps COVID-19 Mobility Trends Report"</a></li>
                 <li>Citymapper: <a href="https://citymapper.com/cmi">"Citymapper Mobility Index (CMI)"</a></li>
                 <li>Google: <a href="https://www.google.com/covid19/mobility/">"Google COVID-19 Community Mobility Reports"</a></li>
-                <li>TomTom: <a href="https://www.tomtom.com/en_gb/traffic-index/london-traffic/">"TomTom Traffic Index"</a> obtained from <a href="https://github.com/ActiveConclusion/COVID19_mobility">ActiveConclusion's GirHub repository</a></li>
-                <li>Transport for London: <a href="https://www.gov.uk/government/statistics/transport-use-during-the-coronavirus-covid-19-pandemic">Transport Use during the COVID-19 Pandemic (via Gov.uk)</a></li>
+                <li>TomTom: <a href="https://www.tomtom.com/en_gb/traffic-index/sydney-traffic/">"TomTom Traffic Index"</a> obtained from <a href="https://github.com/ActiveConclusion/COVID19_mobility">ActiveConclusion's GirHub repository</a></li>
                 <li>Waze: <a href="https://www.waze.com/covid19">"Waze COVID-19 Impact Dashboard"</a></li>
             </ul>
         </article>

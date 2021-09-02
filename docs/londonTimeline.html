@@ -16,6 +16,8 @@
     <script type="text/javascript" src="assets/js/d3.min.js"></script>
     <script>
         $(function () {
+            $("#header").load("header.html");
+            $("#menu").load("menu.html");
             $("#footer").load("footer.html");
         });
     </script>
@@ -26,67 +28,9 @@
 <div id="wrapper">
 
     <!-- Header -->
-    <header id="header">
-        <h1><a href="index.html">How has Travel Demand been impacted by COVID-19?</a></h1>
-        <nav class="links">
-            <ul>
-                <li><a href="londonMobility.html">London Mobility</a></li>
-                <li><a href="londonTimeline.html">London Timeline</a></li>
-                <li><a href="../new_york.html">New York</a></li>
-                <li><a href="../sydney.html">Sydney</a></li>
-                <li><a href="../hong_kong.html">Hong Kong</a></li>
-            </ul>
-        </nav>
-        <nav class="main">
-            <ul>
-                <li class="menu">
-                    <a class="fa-bars" href="#menu">Menu</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <header id="header"></header>
     <!-- Menu -->
-    <section id="menu">
-        <nav style="text-align:right;">
-            <a class="button" href="#menu">Close</a>
-        </nav>
-        <!-- Links -->
-        <section>
-            <ul class="links">
-                <li>
-                    <a href="londonMobility.html">
-                        <h3>London Mobility</h3>
-                        <p>London's mobility change</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="londonTimeline.html">
-                        <h3>London Timeline</h3>
-                        <p>Visualising London's COVID-19 response</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="../new_york.html">
-                        <h3>New York</h3>
-                        <p>New York Data</p>
-                    </a>
-                </li>
-                <li>
-                <li>
-                    <a href="../sydney.html">
-                        <h3>Sydney</h3>
-                        <p>Sydney Data</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="../hong_kong.html">
-                        <h3>Hong Kong</h3>
-                        <p>Hong Kong Data</p>
-                    </a>
-                </li>
-            </ul>
-        </section>
-    </section>
+    <section id="menu"></section>
     <!-- Main -->
     <div id="main">
 

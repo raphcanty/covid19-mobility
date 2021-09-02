@@ -1,0 +1,302 @@
+p {
+    font-family: Arial, sans-serif;
+}
+
+text.title {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    text-anchor: middle;
+}
+
+.labelMob {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0 0 0 0;
+}
+
+.axis text {
+    font-size: 14px;
+    fill: black;
+}
+
+#mobilityGraph {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.line {
+    fill: none;
+    stroke-width: 2px;
+}
+
+span {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+input[type="checkbox"]:checked + label:before {
+    border-color: unset;
+}
+input[type="checkbox"].citymapper:checked + label:before {
+    background: #009f00;
+}
+/* Make citymapper a bit lighter? */
+.citymapper {
+    color: #009f00;
+    accent-color: #009f00;
+}
+
+input[type="checkbox"].apple_driving:checked + label:before {
+    background: deeppink;
+}
+.apple_driving {
+    color: deeppink;
+    accent-color: deeppink;
+}
+
+input[type="checkbox"].apple_transit:checked + label:before {
+    background: darkorchid;
+}
+.apple_transit {
+    color: darkorchid;
+    accent-color: darkorchid;
+}
+
+input[type="checkbox"].apple_walking:checked + label:before {
+    background: limegreen;
+}
+.apple_walking {
+    color: limegreen;
+    accent-color: limegreen;
+}
+
+input[type="checkbox"].google_retail_recreation:checked + label:before {
+    background: darkslategray;
+}
+.google_retail_recreation {
+    color: darkslategray;
+    accent-color: darkslategray;
+}
+
+input[type="checkbox"].google_grocery_pharmacy:checked + label:before {
+    background: #ff7941;
+}
+.google_grocery_pharmacy {
+    color: #ff7941;
+    accent-color: #ff7941;
+}
+
+input[type="checkbox"].google_parks:checked + label:before {
+    background: lightslategray;
+}
+.google_parks {
+    color: lightslategray;
+    accent-color: lightslategray;
+}
+
+input[type="checkbox"].google_transit:checked + label:before {
+    background: hotpink;
+}
+.google_transit {
+    color: hotpink;
+    accent-color: hotpink;
+}
+
+input[type="checkbox"].google_workplaces:checked + label:before {
+    background: mediumturquoise;
+}
+.google_workplaces{
+    color: mediumturquoise;
+    accent-color: mediumturquoise;
+}
+
+input[type="checkbox"].google_residential:checked + label:before {
+    background: dodgerblue;
+}
+.google_residential {
+    color: dodgerblue;
+    accent-color: dodgerblue;
+}
+
+input[type="checkbox"].tomtom:checked + label:before {
+    background: midnightblue;
+}
+.tomtom {
+    color: midnightblue;
+    accent-color: midnightblue;
+}
+
+input[type="checkbox"].waze:checked + label:before {
+    background: darkgoldenrod;
+}
+.waze {
+    color: darkgoldenrod;
+    accent-color: darkgoldenrod;
+}
+
+input[type="checkbox"].TfL_Tube:checked + label:before {
+    background: blue;
+}
+.TfL_Tube {
+    color: blue;
+    accent-color: blue;
+}
+
+input[type="checkbox"].TfL_Bus:checked + label:before {
+    background: red;
+}
+.TfL_Bus {
+    color: red;
+    accent-color: red;
+}
+
+input[type="checkbox"].TfL_Bike:checked + label:before {
+    background: orange;
+}
+.TfL_Bike {
+    color: orange;
+    accent-color: orange;
+}
+
+.line.citymapper {
+    stroke: #009f00;
+}
+
+.line.apple_driving {
+    stroke: deeppink;
+}
+
+.line.apple_transit {
+    stroke: darkorchid;
+}
+
+.line.apple_walking {
+    stroke: limegreen;
+}
+
+.line.google_retail_recreation {
+    stroke: darkslategray;
+}
+
+.line.google_grocery_pharmacy {
+    stroke: #ff7941;
+}
+
+.line.google_parks {
+    stroke: lightslategray;
+}
+
+.line.google_transit {
+    stroke: hotpink;
+}
+
+.line.google_workplaces{
+    stroke: mediumturquoise;
+}
+
+.line.google_residential {
+    stroke: dodgerblue;
+}
+
+.line.tomtom {
+    stroke: midnightblue;
+}
+
+.line.waze {
+    stroke: darkgoldenrod;
+}
+
+.line.TfL_Tube {
+    stroke: blue;
+}
+
+.line.TfL_Bus {
+    stroke: red;
+}
+
+.line.TfL_Bike {
+    stroke: orange;
+}
+
+.line.zero {
+    stroke: black;
+}
+
+rect.level.l0 {
+    fill: #e6e6e6;
+}
+
+rect.level.l1 {
+    fill: #fbbdad;
+}
+
+rect.level.l2 {
+    fill: #ff9276;
+}
+
+rect.level.l3 {
+    fill: #ff6141;
+}
+
+rect.level.l4 {
+    fill: #ff0000;
+}
+
+rect.level.l5 {
+    fill: #D90000;
+}
+
+rect.lockdown {
+    fill: grey;
+    opacity: 30%;
+}
+
+form {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.cbuffer {
+    flex: 15%;
+}
+
+.column {
+    flex: 35%;
+}
+
+.column2 {
+    flex: 50%;
+}
+
+.column br {
+    margin: 0 0 0 0;
+}
+
+text.tooltip.backMob {
+    text-anchor: middle;
+    stroke: white;
+    stroke-width: 4px;
+    opacity: 0.8;
+    font: 14px Arial;
+}
+
+text.tooltip.front.dateMob {
+    text-anchor: middle;
+    fill: black;
+    font: 14px Arial;
+}
+
+line.x {
+    stroke: black;
+    stroke-dasharray: 3,3;
+}
